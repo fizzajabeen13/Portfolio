@@ -1,0 +1,406 @@
+/* ========== GENERAL STYLES ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body {
+  background-color: #E7F1F2; /* BG 1 */
+  color: #235d65; /* Default text */
+  line-height: 1.6;
+}
+
+a {
+  color: #256E7A;
+  text-decoration: none;
+}
+
+h1 {
+  color: #115663;
+}
+
+h2 {
+  color: #3F8792;
+}
+
+h3, h4 {
+  color: #256E7A;
+  font-weight: 600;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: #256E7A;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  margin-bottom: 100px;
+}
+
+.navbar .logo img {
+  height: 40px; 
+}
+
+/* NAV LINKS */
+.navbar ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.navbar li a {
+  color: #E7F1F2;
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+  transition: color 0.3s ease;
+}
+
+/* MODERN HOVER EFFECT */
+.navbar li a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: #9FE3E8;
+  transition: width 0.3s ease;
+}
+
+.navbar li a:hover {
+  color: #9FE3E8;
+}
+
+.navbar li a:hover::after {
+  width: 100%;
+}
+
+/* ========== HERO (BOX STYLE) ========== */
+.hero {
+  text-align: center;
+  padding: 80px 30px;
+  background: #87BBC2; /* Hero color */
+  border-radius: 30px;
+  max-width: 1100px;
+  margin: 60px auto;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
+.hero h1 {
+  font-size: 72px;
+  color: #115663;
+}
+
+.glow {
+  text-shadow:
+    0 0 8px rgba(37, 110, 122, 0.6),
+    0 0 16px rgba(37, 110, 122, 0.5),
+    0 0 28px rgba(37, 110, 122, 0.4);
+}
+
+.tagline {
+  font-size: 20px;
+  color: #256E7A;
+  margin-bottom: 10px;
+}
+
+.role {
+  font-size: 22px;
+  color: #25565e;
+  margin-bottom: 20px;
+}
+
+/* ========== SECTION BACKGROUNDS (SHUFFLE) ========== */
+.section {
+  padding: 70px 30px;
+  max-width: 1100px;
+  margin: 60px auto;
+  border-radius: 30px;
+}
+
+/* BG shuffle: BG1 → BG2 → BG1 */
+.section:nth-child(odd) {
+  background: #E7F1F2;
+}
+
+.section:nth-child(even) {
+  background: #9ecfd7;
+}
+
+/* Section Titles */
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 40px;
+  color: #115663;
+}
+
+/* Subtitle (after H1 everywhere) */
+.subtitle {
+  color: #256E7A;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.cta-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  background-color: #256E7A;
+  color: #E7F1F2;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+.cta-button:hover {
+  background-color: #E7F1F2;
+  color: #256E7A;
+  transform: translateY(-4px);
+}
+
+/* ========== CARDS (FEATURE / PROJECT / CONTACT) ========== */
+.feature-card,
+.project-card,
+.contact {
+  background: #E7F1F2;
+  padding: 50px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  transition: 0.3s ease;
+  margin-bottom: 15px;
+}
+
+.feature-card:hover,
+.project-card:hover {
+  transform: translateY(-6px);
+}
+
+/* Project image */
+.project-card img {
+  width: 70%;
+  border-radius: 15px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+/* ========== SKILLS ========== */
+.skill-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 14px; /* row gap | column gap */
+  justify-content: center;
+}
+
+.skill-badge {
+  background: #E7F1F2;
+  color: #256E7A;
+  padding: 10px 18px;
+  border-radius: 10px;
+  font-weight: bold;
+  margin-bottom: 14px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.skill-badge:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
+/* ========== PROJECT TAGS ========== */
+.tech {
+  display: inline-block;
+  margin-top: 10px;
+  background: #256E7A;
+  color:#E7F1F2;
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 13px;
+}
+
+.tech:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.2);
+}
+
+/* Status */
+.status {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.completed { background:#d4f8dc; color:#2b7a0b; }
+.in-progress { background:#fff4cc; color:#aa7700; }
+.ongoing { background:#ffe0e0; color:#cc0000; }
+
+/* ========== FOOTER ========== */
+.site-footer {
+  background: #0b2b3b;
+  color: #fff;
+  padding: 30px 20px;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-links {
+  margin-top: 12px;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+.footer-links a {
+  color: #E7F1F2;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #9FE3E8;
+}
+
+/* ===== RESPONSIVE STYLES ===== */
+@media (max-width: 1024px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+
+  .hero {
+    padding: 60px 20px;
+    font-size: 1rem;
+  }
+
+  .hero h1 {
+    font-size: 50px;
+  }
+
+  .section {
+    padding: 50px 20px;
+  }
+
+  .feature-card,
+  .project-card,
+  .contact {
+    padding: 35px 20px;
+  }
+
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Navbar stacked */
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar ul {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  .hero {
+    padding: 40px 15px;
+    border-radius: 20px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .tagline, .role {
+    font-size: 18px;
+  }
+
+  .section {
+    padding: 40px 15px;
+    border-radius: 20px;
+  }
+
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 25px;
+  }
+
+  .feature-card,
+  .project-card,
+  .contact {
+    padding: 25px 15px;
+  }
+
+  /* Skill badges stack better on mobile */
+  .skill-grid,
+  .skills-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-badge {
+    width: 80%;
+    text-align: center;
+  }
+
+  /* Project images scale */
+  .project-card img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .tagline, .role {
+    font-size: 16px;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+
+  .feature-card,
+  .project-card,
+  .contact {
+    padding: 20px 10px;
+  }
+
+  .navbar ul {
+    width: 100%;
+  }
+}
+
