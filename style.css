@@ -287,7 +287,7 @@ h3, h4 {
   color: #9FE3E8;
 }
 
-/* ===== MOBILE RESPONSIVENESS ===== */
+/* ===== RESPONSIVE STYLES ===== */
 @media (max-width: 1024px) {
   .navbar {
     padding: 15px 30px;
@@ -398,25 +398,5 @@ h3, h4 {
   .navbar ul {
     width: 100%;
   }
-
-  .cta-button {
-    padding: 10px 20px;
-    font-size: 14px;
-  }
-
-  .skill-badge {
-    width: 90%;
-    padding: 8px 12px;
-  }
-
-  .project-card p {
-    font-size: 14px;
-  }
-
-  .project-card h3 {
-    font-size: 18px;
-  }
 }
-
- 
 
