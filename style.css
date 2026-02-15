@@ -287,23 +287,27 @@ h3, h4 {
   color: #9FE3E8;
 }
 
-/* ===== RESPONSIVE STYLES ===== */
+/* ===== MOBILE RESPONSIVENESS ===== */
 @media (max-width: 1024px) {
   .navbar {
     padding: 15px 30px;
   }
 
-  .hero {
-    padding: 60px 20px;
-    font-size: 1rem;
+  .navbar ul {
+    gap: 15px;
+  }
+
+  .hero, .stacked-section {
+    padding: 50px 20px;
   }
 
   .hero h1 {
-    font-size: 50px;
+    font-size: 60px;
   }
 
-  .section {
-    padding: 50px 20px;
+  .section-title {
+    font-size: 28px;
+    margin-bottom: 30px;
   }
 
   .feature-card,
@@ -311,15 +315,10 @@ h3, h4 {
   .contact {
     padding: 35px 20px;
   }
-
-  .section-title {
-    font-size: 28px;
-    margin-bottom: 30px;
-  }
 }
 
 @media (max-width: 768px) {
-  /* Navbar stacked */
+  /* Navbar stacked vertically */
   .navbar {
     flex-direction: column;
     align-items: flex-start;
@@ -328,8 +327,8 @@ h3, h4 {
   .navbar ul {
     flex-direction: column;
     width: 100%;
-    gap: 10px;
     margin-top: 10px;
+    gap: 10px;
   }
 
   .hero {
@@ -361,9 +360,7 @@ h3, h4 {
     padding: 25px 15px;
   }
 
-  /* Skill badges stack better on mobile */
-  .skill-grid,
-  .skills-container {
+  .skills-container, .skill-grid {
     flex-direction: column;
     align-items: center;
   }
@@ -373,7 +370,6 @@ h3, h4 {
     text-align: center;
   }
 
-  /* Project images scale */
   .project-card img {
     width: 100%;
     height: auto;
@@ -402,5 +398,25 @@ h3, h4 {
   .navbar ul {
     width: 100%;
   }
+
+  .cta-button {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .skill-badge {
+    width: 90%;
+    padding: 8px 12px;
+  }
+
+  .project-card p {
+    font-size: 14px;
+  }
+
+  .project-card h3 {
+    font-size: 18px;
+  }
 }
+
+ 
 
