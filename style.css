@@ -287,116 +287,150 @@ h3, h4 {
   color: #9FE3E8;
 }
 
-/* ===== RESPONSIVE STYLES ===== */
-@media (max-width: 1024px) {
-  .navbar {
-    padding: 15px 30px;
-  }
+/* ===== MOBILE & TABLET RESPONSIVENESS ===== */
 
-  .navbar ul {
-    gap: 15px;
-  }
-
-  .hero, .stacked-section {
-    padding: 50px 20px;
-  }
-
-  .hero h1 {
-    font-size: 60px;
-  }
-
-  .section-title {
-    font-size: 28px;
-    margin-bottom: 30px;
-  }
-
-  .feature-card,
-  .project-card,
-  .contact {
-    padding: 35px 20px;
-  }
+/* Hamburger styling */
+.hamburger {
+  display: none; /* hidden on desktop */
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 300; /* ensure it stays above navbar menu */
 }
 
+.hamburger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #E7F1F2;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/* Mobile responsiveness */
 @media (max-width: 768px) {
-  /* Navbar stacked vertically */
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+  /* Show hamburger on mobile */
+  .hamburger {
+    display: flex;
   }
 
+  /* Navbar menu */
   .navbar ul {
+    position: absolute;
+    top: 100%; /* directly below navbar */
+    right: 0;
+    background: #256E7A;
     flex-direction: column;
-    width: 100%;
-    margin-top: 10px;
-    gap: 10px;
+    align-items: center;
+    width: 220px; /* slightly bigger for spacing */
+    border-radius: 12px;
+    padding: 15px 0;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+    display: none; /* hidden by default */
+    z-index: 200;
   }
 
+  /* Show menu when active */
+  .navbar ul.active {
+    display: flex;
+  }
+
+  /* Navbar list items */
+  .navbar li {
+    width: 100%;
+    text-align: center;
+    margin: 10px 0;
+  }
+
+  .navbar li a {
+    color: #E7F1F2;
+    font-size: 16px;
+    padding: 8px 0;
+  }
+
+  /* Hamburger animation when open */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(6px, -6px);
+  }
+
+  /* Hero adjustments */
   .hero {
     padding: 40px 15px;
     border-radius: 20px;
+    margin: 40px 15px;
   }
 
-  .hero h1 {
-    font-size: 36px;
-  }
+  .hero h1 { font-size: 48px; }
+  .tagline { font-size: 18px; }
+  .role { font-size: 20px; }
 
-  .tagline, .role {
-    font-size: 18px;
-  }
-
+  /* Section adjustments */
   .section {
-    padding: 40px 15px;
+    padding: 50px 15px;
+    margin: 40px 15px;
     border-radius: 20px;
   }
 
-  .section-title {
-    font-size: 24px;
-    margin-bottom: 25px;
-  }
+  .section-title { font-size: 26px; margin-bottom: 25px; }
+  .subtitle { font-size: 16px; }
 
+  /* Cards */
   .feature-card,
   .project-card,
   .contact {
     padding: 25px 15px;
+    margin-bottom: 20px;
   }
 
-  .skills-container, .skill-grid {
-    flex-direction: column;
-    align-items: center;
-  }
+  .project-card img { width: 100%; }
 
+  /* Skills */
   .skill-badge {
-    width: 80%;
-    text-align: center;
+    padding: 8px 14px;
+    font-size: 14px;
   }
 
-  .project-card img {
-    width: 100%;
-    height: auto;
-  }
+  .skills-container,
+  .skill-grid { gap: 10px; }
+
+  /* Tech tags */
+  .tech { padding: 5px 10px; font-size: 12px; }
+
+  .status { font-size: 14px; padding: 4px 10px; }
+
+  /* CTA buttons */
+  .cta-button { padding: 10px 20px; font-size: 16px; }
+
+  /* Footer */
+  .footer-content { padding: 20px 10px; }
+  .footer-links { gap: 12px; }
 }
 
+/* Ultra-small devices */
 @media (max-width: 480px) {
-  .hero h1 {
-    font-size: 28px;
-  }
+  .hero h1 { font-size: 36px; }
+  .tagline, .role { font-size: 16px; }
 
-  .tagline, .role {
-    font-size: 16px;
-  }
+  .section-title { font-size: 22px; }
+  .subtitle { font-size: 14px; }
 
-  .section-title {
-    font-size: 20px;
-  }
+  .cta-button { padding: 8px 16px; font-size: 14px; }
+  .skill-badge { font-size: 12px; padding: 6px 10px; }
+  .tech { font-size: 11px; padding: 4px 8px; }
+  .status { font-size: 12px; padding: 3px 8px; }
 
-  .feature-card,
-  .project-card,
-  .contact {
-    padding: 20px 10px;
-  }
-
+  /* Navbar menu full width on ultra-small */
   .navbar ul {
     width: 100%;
+    top: 60px; /* ensure proper alignment below navbar */
+    right: 0;
   }
-}
 
+  .navbar li a { font-size: 14px; }
+}
